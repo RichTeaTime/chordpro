@@ -373,8 +373,18 @@ the left of the page, centered, and right. When even/odd page printing
 is selected, the left and right parts are swapped on even pages.
 
 The title, subtitle and footer may also be set to an *array* of three
-part strings, which will be printed on separate lines. 
+part strings, which will be printed on separate lines.
 
+        "formats" : {
+            "title": {
+                "subtitle"     : [                  // each item in this array will be printed on a separate line
+                    [ "", "%{artist}", ""], 
+                    [ "", "Key: %{key}", "" ], 
+                    [ "", "Tempo: %{tempo}", "" ] 
+                ]
+            }
+        }
+    
 All heading strings may contain references to metadata in the form
 `%{`*name*`}`, for example `%{title}`. The current page number can be
 obtained with `%{page}`, and the song index in the songbook with
